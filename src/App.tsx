@@ -29,7 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <Input value="222" />
+        <Input max={999} min={0} />
       </div>
     </>
   );
