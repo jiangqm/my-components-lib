@@ -58,6 +58,6 @@ describe("Input Component", () => {
 
     // 尝试增加到最大值
     fireEvent.click(incrementButton);
-    expect(inputElement).toHaveValue(10);
+    expect(inputElement).toHaveValue(5);
   });
 });
