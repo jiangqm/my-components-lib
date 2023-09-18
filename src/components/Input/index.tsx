@@ -15,7 +15,7 @@ export type InputProps = {
 };
 
 const Input: React.FC<InputProps> = props => {
-  const [inputValue, setInputValue] = useState<number | undefined>();
+  const [inputValue, setInputValue] = useState<number | undefined>(0);
   const { value, min, max } = props;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onInputChange = (e: any) => {
@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = props => {
   };
 
   useEffect(() => {
-    setInputValue(value || undefined);
+    setInputValue(value || 0);
   }, [value]);
 
   const onAdd = () => {
@@ -55,15 +55,28 @@ const Input: React.FC<InputProps> = props => {
     }
   }, [max, min]);
   return (
-    <div>
-      <button onClick={onSub}>-</button>
+    <div className={styles["input-content"]}>
+      <button
+        aria-label="sub"
+        className={styles["decrement-button"]}
+        onClick={onSub}
+      >
+        -
+      </button>
       <input
+        role="textbox"
         className={styles.input}
         type="number"
         value={inputValue}
         onChange={onInputChange}
       />
-      <button onClick={onAdd}>+</button>
+      <button
+        aria-label="add"
+        className={styles["increment-button"]}
+        onClick={onAdd}
+      >
+        +
+      </button>
     </div>
   );
 };

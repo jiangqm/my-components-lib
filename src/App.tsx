@@ -1,8 +1,13 @@
+/*
+ * @Author: jiangqm
+ * @Date: 2023-09-18 08:21:07
+ * @Description:
+ */
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Input } from "./components/index";
+import { Input } from "my-components-lib"; // 导入你要测试的组件
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,7 +34,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <Input max={999} min={0} />
+        <Input value={5} max={10} min={0} />
       </div>
     </>
   );

@@ -1,6 +1,32 @@
+.input-content{
+    border: 1px solid #ccc;
+}
+
 .input{
     height: 32px;
     font-size: 20px;
     border-radius: 6px;
     padding: 4px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox 下清除按钮 */
+}
+
+.decrement-button,.increment-button{
+    font-size: 20px;
+    border: none;
+   &:focus{
+    outline: none;
+   }
+
 }

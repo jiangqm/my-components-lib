@@ -4,7 +4,7 @@
  * @Description:
  */
 import React from "react";
-import { Input } from "../../index";
+import { Input } from "my-components-lib";
 const InputDemo: React.FC = () => {
   return <Input value={666}></Input>;
 };
