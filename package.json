@@ -1,10 +1,10 @@
 {
   "name": "my-components-lib",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "author":"",
-  "license":"MIT",
+  "author": "",
+  "license": "MIT",
   "main": "./dist/my-components-lib.umd.cjs",
   "module": "./dist/my-components-lib.js",
   ".": {
