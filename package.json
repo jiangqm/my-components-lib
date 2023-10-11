@@ -3,11 +3,13 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
+  "author":"",
+  "license":"MIT",
   "main": "./dist/my-components-lib.umd.cjs",
   "module": "./dist/my-components-lib.js",
   ".": {
-    "import": "./dist/my-lib.js",
-    "require": "./dist/my-lib.cjs"
+    "import": "./dist/my-components-lib.js",
+    "require": "./dist/my-components-lib.umd.js"
   },
   "types": "./dist/types",
   "files": [
@@ -21,7 +23,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage"
   },
   "husky": {
     "hooks": {
@@ -53,6 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitest/coverage-istanbul": "^0.34.6",
     "@vitest/ui": "^0.34.4",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.0.0",
