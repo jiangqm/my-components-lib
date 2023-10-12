@@ -1,9 +1,9 @@
 {
-  "name": "my-components-lib",
+  "name": "kermit-components-lib",
   "private": false,
   "version": "0.0.1",
   "type": "module",
-  "author": "",
+  "author": "kermit",
   "license": "MIT",
   "main": "./dist/my-components-lib.umd.cjs",
   "module": "./dist/my-components-lib.js",

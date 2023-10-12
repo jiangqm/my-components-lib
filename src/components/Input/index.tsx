@@ -17,6 +17,11 @@ export type InputProps = {
 const Input: React.FC<InputProps> = props => {
   const [inputValue, setInputValue] = useState<number | undefined>(0);
   const { value, min, max } = props;
+  const onPushChage = (_val: number) => {
+    if (props.onChange) {
+      props.onChange(_val);
+    }
+  };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onInputChange = (e: any) => {
     const _v = e.target.value;
@@ -29,9 +34,7 @@ const Input: React.FC<InputProps> = props => {
     }
 
     setInputValue(nextVal);
-    if (props.onChange) {
-      props.onChange(nextVal);
-    }
+    onPushChage(nextVal);
   };
 
   useEffect(() => {
@@ -40,11 +43,15 @@ const Input: React.FC<InputProps> = props => {
 
   const onAdd = () => {
     const _v = Number(inputValue) + 1;
-    setInputValue(max && _v > max ? max : _v);
+    const nextVal = max && _v > max ? max : _v;
+    setInputValue(nextVal);
+    onPushChage(nextVal);
   };
   const onSub = () => {
     const _v = Number(inputValue) - 1;
-    setInputValue(min && _v < min ? min : _v);
+    const nextVal = min && _v < min ? min : _v;
+    setInputValue(nextVal);
+    onPushChage(nextVal);
   };
 
   useEffect(() => {
